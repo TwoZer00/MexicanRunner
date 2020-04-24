@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexican Runner</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">
+                Mexican Runner
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="#play">Play</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#story">Story</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#how">How to play</a>
+                      </li>
+                  </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <main class="jumbotron jumbotron-fluid bg-light">
+
+        <section id="home" class="border-bottom">
+            <div class="jumbotron bg-light text-center " >
+                <img src="img/MexicanRunner.jpg" alt="" style="width:90px; height: 90px; ">
+                <h1>Mexican Runner</h1>
+                <p>Now you can get the american dream. RUN!</p>
+            </div>
+        </section>
+        <section id="play" class="border-bottom">
+            <div class="jumbotron bg-light">
+                <div class="alert alert-dark" role="alert" style="display: none;" id="size">
+                    The size of the screen is small, you need 1200px of with to play the game correctly :D.
+                </div>
+                <div id="gameContainer"></div>
+                <div class="footer">
+                    <div class="webgl-logo"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="border-bottom">
+            <div class="jumbotron bg-light text-center " >
+                <h1>How to play</h1>
+                    <img src="img/keyboard.svg" style="width: 40px;">
+                    <p class="card-text">Jump</p>
+                    <img src="img/keyboard_down.svg" style="width: 40px;">
+                    <p class="card-text">Crouch</p>
+            </div>
+        </section>
+        
+        <section id="story">
+            <div class="jumbotron bg-light">
+                <h1 class="text-center">Story</h1>
+                <p class="text-justify">Now, you are mexican looking for the american dream, but you don't have the opportunities to go legally,
+                     the only way you can make you dream true is cross the border to the old way, jumping the walls.  </p>
+                <h1 class="text-center">Character</h1>
+                
+                <p class="text-justify">
+                    José Luis: </btr>
+                    In his country do nothing. With 4 children and havent finish the school, he hear about the great opportunities in usa, this motivates him to go forward to support his family.
+                    Since he was kid always was a great runner, his family was poor and the only thing he can do it for fun was run in child plays.
+                </p>
+
+                <div class="text-center">
+                    <img src="img/sprite_jumping.png" alt=""style="width:200px;" >                    
+                </div>
+
+
+                
+            </div>
+        </section>
+
+        
+
+    </main>
+
+    <div class="modal fade" id="contactForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a class="nav-link text-muted" href="https://github.com/Two-Zer00">&copy; 2020 TwoZer00</a>
+            </li>
+          </ul>
+    </footer>
+    </div>
+
+<script>
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        if(window.screen.width <=1200){
+            
+            document.getElementById("size").style.display = "block"
+            document.getElementById("gameContainer").remove;
+        }
+        
+
+    }
+
+    window.onresize = function(event) {
+        if(window.screen.width <=1200){
+            
+            document.getElementById("size").style.display = "block"
+            document.getElementById("gameContainer").remove;
+        }
+        console.log(navigator.userAgent)
+    };
+      var gameInstance = UnityLoader.instantiate("gameContainer", "Build/MR.json", {onProgress: UnityProgress});
+
+</script>
+</body>
+</html>
