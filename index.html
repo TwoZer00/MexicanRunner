@@ -26,7 +26,7 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav" id="menu">
                     <li class="nav-item">
                     <a class="nav-link" href="#play">Play</a>
                     </li>
@@ -45,7 +45,7 @@
         <main class="jumbotron jumbotron-fluid bg-light">
 
         <section id="home" class="border-bottom">
-            <div class="jumbotron bg-light text-center " >
+            <div class="jumbotron bg-light text-center " id="desc">
                 <img src="img/MexicanRunner.jpg" alt="" style="width:90px; height: 90px; ">
                 <h1>Mexican Runner</h1>
                 <p>Now you can get the american dream. RUN!</p>
@@ -56,31 +56,37 @@
                 <div class="alert alert-dark" role="alert" style="display: none;" id="size">
                     The size of the screen is small, you need 1200px of with to play the game correctly :D.
                 </div>
-                <div id="gameContainer" style="height: 600px;"></div>
+                --<div id="gameContainer" style="height: 600px;"></div>
             </div>
         </section>
 
         <section id="how" class="border-bottom">
             <div class="jumbotron bg-light text-center " >
                 <h1>How to play</h1>
-                    <img src="img/keyboard.svg" style="width: 40px;">
-                    <p class="card-text">Jump</p>
-                    <img src="img/keyboard_down.svg" style="width: 40px;">
-                    <p class="card-text">Crouch</p>
+                <img src="img/keyboard.svg" style="width: 40px;">
+                <p class="card-text">Jump</p>
+                <img src="img/keyboard_down.svg" style="width: 40px;">
+                <p class="card-text">Crouch</p>
             </div>
         </section>
         
         <section id="story">
             <div class="jumbotron bg-light">
                 <h1 class="text-center">Story</h1>
-                <p class="text-justify">Now, you are mexican looking for the american dream, but you don't have the opportunities to go legally,
-                     the only way you can make you dream true is cross the border to the old way, jumping the walls.  </p>
-                <h1 class="text-center">Character</h1>
+                <p class="text-justify">After many years life has taken many blows, the economic situation does not allow you to give the maximum of your abilities and besides this you have the responsibility of a family on your back. <br>
+                    After several attempts in your country it is impossible for you to get over it but since you were a child you have heard about the promised land, that land that is in the north; a place where you can make your dreams come true and achieve a life of dreams and finally have your family <happy class="br"></happy>
+                    But the laws do not allow you to arrive in the legal way to that land of happiness, with your economic capacities you will not be able to arrive in the conventional way, but that will not stop you from arriving to the land of prosperity. <br>
+                    There will be no obstacles that will prevent you from arriving at the place you want and obtaining the stability and happiness you have always desired, overcome the barriers that life and legal life put in your way, jump over every wall that is put in front of you, be the: MexicanRunner   </p>
                 
+                <h1 class="text-center">Character</h1>
                 <p class="text-justify">
-                    José Luis: </btr>
-                    In his country do nothing. With 4 children and havent finish the school, he hear about the great opportunities in usa, this motivates him to go forward to support his family.
-                    Since he was kid always was a great runner, his family was poor and the only thing he can do it for fun was run in child plays.
+                    José Luis:
+                    An accumulation of several bad decisions and a poorly planned family, 12th child in the family.
+                    Very skilled with sports, since he was little you could already see his skills, he tried everything from running, baseball, soccer, boxing to swimming the skills were remarkable but in all of them he found obstacles; paying to be able to pass the tests to sexual offers, this made him quit sports to start working and making money. <br>
+                    School was never his thing in all subjects he failed, he did not find motivation in school to help him improve his performance until he found the woman who would accompany him all his life Maria. <br>
+                    With her he would have 4 children, the family would grow too much, this would lead them to think seriously about the economic situation. It was beginning to be not enough for everyone.
+                    Jose Luis had heard of the land where his problems would be solved, USA, the way he would arrive would be unorthodox. <br>
+
                 </p>
 
                 <div class="text-center">
@@ -126,6 +132,26 @@
     </div>
 
 <script>
+    const lenguage = (window.navigator.language).substring(0,2);
+    const espTranslation = {titles:["Jugar","Historia","Como jugar","Personaje"],desc:["Consigue el sueño americano. CORRE!","Salto","Agacharse","Después de muchos años la vida de ha dado muchos golpes, la situación economice no te deja dar el máximo de tus capacidades y ademas de esto tienes la responsabilidad de una familia en tu espalda.Después de varios intentos en tu país te es imposible superarte pero desde pequeño haz escuchado de la tierra prometida, de aquella tierra que se encuentra en el norte; lugar en el que puedes hacer tus sueños realidad y lograr la vida de sueños y por fin tener a tu familia feliz.Pero las leyes no te permiten llegar de la manera legal a esa tierra de felicidad, con tus capacidades económicas no podrás llegar de la manera convencional, pero eso no te va a detener de arribar a la tierra de la prosperidad.No habrá obstáculos que te impida llegar al lugar que tu quieras y obtener la estabilidad y felicidad que siempre haz deseado, supera las barreras que te pone la vidad y la vida legal, salta todo muro que se te ponga en frente, se:","Un cúmulo de varias malas decisiones y una mal planeada familia, 12vo hijo de la familia. Muy hábil con los deportes, desde pequeño se podían ya observar sus habilidades, intento todo, desde correr, beisbol, futbol, boxeo hasta natación las aptitudes eran notables pero en todas ellas se encontró trabas; pagar para poder pasar las pruebas hasta ofertas sexuales, esto hizo que dejara los deportes para empezar a trabajar y ganar dinero. La escuela nunca fue lo suyo en todas las materias reprobaba, no encontraba motivación en la escuela que lo ayudara a mejorar su desempeño hasta que encontró a la mujer que lo acompañaría toda su vida maría. Con ella tendría 4 hijos, la familia crecería demasiado, esto los llevaría a pensar seriamente en la situación económica. Empezaba a no ser suficiente para todos. José luis había escuchado de la tierra en la cual sus problemas serian resueltos, USA, la manera en la que llegaría no seria nada ortodoxa."]};
+    if(lenguage==="es"){
+        let menu = document.getElementById("menu").children;
+        console.log(menu);
+        for(var i=0;i<menu.length;i++){
+            menu[i].children[0].innerHTML = espTranslation.titles[i];
+        }
+        (document.getElementById("desc").children[2]).innerHTML = espTranslation.desc[0];
+        let how =  (document.getElementById("how").children[0]);
+        how.children[0].innerHTML = espTranslation.titles[2];
+        how.children[2].innerHTML = espTranslation.desc[1];
+        how.children[4].innerHTML = espTranslation.desc[2];
+
+        let story =  (document.getElementById("story").children[0]);
+        story.children[0].innerHTML = espTranslation.titles[1];
+        story.children[1].innerHTML = espTranslation.desc[3];
+        story.children[2].innerHTML = espTranslation.titles[3];
+        story.children[3].innerHTML = espTranslation.desc[4];
+    }
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
         if(window.screen.width <=1200){
             
@@ -135,7 +161,6 @@
         
 
     }
-
     window.onresize = function(event) {
         if(window.screen.width <=1200){
             
