@@ -32,8 +32,7 @@
     
     <script data-ad-client="ca-pub-2469067640186892" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
-<body>
-    
+<body onload="init()" data-spy="scroll">
     <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -46,10 +45,10 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav" id="menu">
                     <li class="nav-item">
-                    <a class="nav-link" href="#play">Play</a>
+                        <a class="nav-link" href="#play">Play</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link" href="#story">Story</a>
+                        <a class="nav-link" href="#story">Story</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#how">How to play</a>
@@ -62,7 +61,7 @@
         <main class="jumbotron jumbotron-fluid bg-light">
             <section id="home" class="border-bottom">
                 <div class="jumbotron bg-light text-center " id="desc">
-                    <img src="img/MexicanRunner.jpg" alt="" style="width:90px; height: 90px; ">
+                    <img src="img/MexicanRunner.jpg" alt="LogoMexicanRunner" style="width:90px; height: 90px;" onclick="showModal()">
                     <h1>Mexican Runner</h1>
                     <p>Now you can get the american dream. RUN!</p>
                 </div>
@@ -104,9 +103,9 @@
                         Jose Luis had heard of the land where his problems would be solved, USA, the way he would arrive would be unorthodox. <br>
 
                     </p>
-
+                      
                     <div class="text-center">
-                        <img src="img/sprite_jumping.png" alt=""style="width:200px;" >                    
+                        <img src="img/sprite_jumping.png"  alt=""style="width:200px;" >   
                     </div>
 
 
@@ -134,11 +133,34 @@
         </div>
         </div>
     </div>
+    <!-- Modal -->
+    <div class="modal fade" id="modalVideo" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="center">
+                    <iframe width="700" height="394" src="https://www.youtube-nocookie.com/embed/VYx-5g36dkQ?controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
 
     <footer>
         <ul class="nav justify-content-center">
             <li class="nav-item">
-            <a class="nav-link text-muted" href="https://github.com/Two-Zer00">&copy; 2020 TwoZer00</a>
+                <a class="nav-link text-muted" href="https://twozer00.dev">&copy; 2020 TwoZer00</a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link text-muted" onclick="changeLenguage('es')">ES</a>
+            </li >
+            <li class="nav-item">
+                <a href="javascript:void(0);" class="nav-link text-muted" onclick="changeLenguage('en')">EN</a>
             </li>
         </ul>
     </footer>
@@ -147,26 +169,7 @@
     </div>
 
 <script>
-    const lenguage = (window.navigator.language).substring(0,2);
-    const espTranslation = {titles:["Jugar","Historia","Como jugar","Personaje"],desc:["Consigue el sueño americano. CORRE!","Salto","Agacharse","Después de muchos años la vida de ha dado muchos golpes, la situación economice no te deja dar el máximo de tus capacidades y ademas de esto tienes la responsabilidad de una familia en tu espalda.Después de varios intentos en tu país te es imposible superarte pero desde pequeño haz escuchado de la tierra prometida, de aquella tierra que se encuentra en el norte; lugar en el que puedes hacer tus sueños realidad y lograr la vida de sueños y por fin tener a tu familia feliz.Pero las leyes no te permiten llegar de la manera legal a esa tierra de felicidad, con tus capacidades económicas no podrás llegar de la manera convencional, pero eso no te va a detener de arribar a la tierra de la prosperidad.No habrá obstáculos que te impida llegar al lugar que tu quieras y obtener la estabilidad y felicidad que siempre haz deseado, supera las barreras que te pone la vidad y la vida legal, salta todo muro que se te ponga en frente, se:","Un cúmulo de varias malas decisiones y una mal planeada familia, 12vo hijo de la familia. Muy hábil con los deportes, desde pequeño se podían ya observar sus habilidades, intento todo, desde correr, beisbol, futbol, boxeo hasta natación las aptitudes eran notables pero en todas ellas se encontró trabas; pagar para poder pasar las pruebas hasta ofertas sexuales, esto hizo que dejara los deportes para empezar a trabajar y ganar dinero. La escuela nunca fue lo suyo en todas las materias reprobaba, no encontraba motivación en la escuela que lo ayudara a mejorar su desempeño hasta que encontró a la mujer que lo acompañaría toda su vida maría. Con ella tendría 4 hijos, la familia crecería demasiado, esto los llevaría a pensar seriamente en la situación económica. Empezaba a no ser suficiente para todos. José luis había escuchado de la tierra en la cual sus problemas serian resueltos, USA, la manera en la que llegaría no seria nada ortodoxa."]};
-    if(lenguage==="es"){
-        let menu = document.getElementById("menu").children;
-        console.log(menu);
-        for(var i=0;i<menu.length;i++){
-            menu[i].children[0].innerHTML = espTranslation.titles[i];
-        }
-        (document.getElementById("desc").children[2]).innerHTML = espTranslation.desc[0];
-        let how =  (document.getElementById("how").children[0]);
-        how.children[0].innerHTML = espTranslation.titles[2];
-        how.children[2].innerHTML = espTranslation.desc[1];
-        how.children[4].innerHTML = espTranslation.desc[2];
-
-        let story =  (document.getElementById("story").children[0]);
-        story.children[0].innerHTML = espTranslation.titles[1];
-        story.children[1].innerHTML = espTranslation.desc[3];
-        story.children[2].innerHTML = espTranslation.titles[3];
-        story.children[3].innerHTML = espTranslation.desc[4];
-    }
+    
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
         if(window.screen.width <=1200){
             
@@ -185,7 +188,74 @@
         console.log(navigator.userAgent)
     };
     var gameInstance = UnityLoader.instantiate("gameContainer", "Build/MR.json", {onProgress: UnityProgress});
+    function loadJSON(callback) {   
+        var xobj = new XMLHttpRequest();
+            xobj.overrideMimeType("application/json");
+            xobj.open('GET', 'staticFiles/staticText.json', true); // Replace 'appDataServices' with the path to your file
+            xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+                // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+                callback(xobj.responseText);
+            }
+        };
+        xobj.send(null);  
+    }
+    var lenguage = (window.navigator.language).substring(0,2);
+    function init() {
+        loadJSON(function(response) {
+            // Parsing JSON string into object
+            var actual_JSON = JSON.parse(response);
+            if(lenguage==="es"){
+                document.children[0].lang = "es";
+                let menu = document.getElementById("menu").children;
+                //console.log(menu);
+                for(var i=0;i<menu.length;i++){
+                    menu[i].children[0].innerHTML = actual_JSON[0].titles[i];
+                }
+                (document.getElementById("desc").children[2]).innerHTML = actual_JSON[0].desc[0];
+                let how =  (document.getElementById("how").children[0]);
+                how.children[0].innerHTML = actual_JSON[0].titles[2];
+                how.children[2].innerHTML = actual_JSON[0].desc[1];
+                how.children[4].innerHTML = actual_JSON[0].desc[2];
 
+                let story =  (document.getElementById("story").children[0]);
+                story.children[0].innerHTML = actual_JSON[0].titles[1];
+                story.children[1].innerHTML = actual_JSON[0].desc[3];
+                story.children[2].innerHTML = actual_JSON[0].titles[3];
+                story.children[3].innerHTML = actual_JSON[0].desc[4];
+            }
+            else if(lenguage==="en"){
+                document.children[0].lang = "en";
+                let menu = document.getElementById("menu").children;
+                //console.log(menu);
+                for(var i=0;i<menu.length;i++){
+                    menu[i].children[0].innerHTML = actual_JSON[1].titles[i];
+                }
+                (document.getElementById("desc").children[2]).innerHTML = actual_JSON[1].desc[0];
+                let how =  (document.getElementById("how").children[0]);
+                how.children[0].innerHTML = actual_JSON[1].titles[2];
+                how.children[2].innerHTML = actual_JSON[1].desc[1];
+                how.children[4].innerHTML = actual_JSON[1].desc[2];
+
+                let story =  (document.getElementById("story").children[0]);
+                story.children[0].innerHTML = actual_JSON[1].titles[1];
+                story.children[1].innerHTML = actual_JSON[1].desc[3];
+                story.children[2].innerHTML = actual_JSON[1].titles[3];
+                story.children[3].innerHTML = actual_JSON[1].desc[4];
+            }
+        });
+        console.log(document.children[0].lang);
+    }
+
+    function changeLenguage(leng){
+        console.log(leng);
+        lenguage=leng;
+        init();
+    }
+
+    function showModal(){
+        $('#modalVideo').modal("show");
+    }
 </script>
 </body>
 </html>
