@@ -60,10 +60,15 @@
     <div class="container">
         <main class="jumbotron jumbotron-fluid bg-light">
             <section id="home" class="border-bottom">
-                <div class="jumbotron bg-light text-center " id="desc">
-                    <img src="img/MexicanRunner.jpg" alt="LogoMexicanRunner" style="width:90px; height: 90px;" onclick="showModal()">
-                    <h1>Mexican Runner</h1>
-                    <p>Now you can get the american dream. RUN!</p>
+                <div class="col">
+                    <div class="bg-light text-center " id="desc">
+                        <img src="img/MexicanRunner.jpg" alt="LogoMexicanRunner" style="width:90px; height: 90px;" onclick="showModal()">
+                        <h1>Mexican Runner</h1>
+                        <p>Now you can get the american dream. RUN!</p>
+                    </div>
+                </div>
+                <div style="height: 100px;" class="text-center">
+                    <a href='https://play.google.com/store/apps/details?id=com.twozero.mexicanRunner&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' id="googlePlayBadge" src='https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png' style="height: 100%;"/></a>
                 </div>
             </section>
             <section id="play" class="border-bottom">
@@ -76,12 +81,16 @@
             </section>
 
             <section id="how" class="border-bottom">
-                <div class="jumbotron bg-light text-center " >
+                <div class="jumbotron bg-light text-center" >
                     <h1>How to play</h1>
                     <img src="img/keyboard.svg" style="width: 40px;">
                     <p class="card-text">Jump</p>
                     <img src="img/keyboard_down.svg" style="width: 40px;">
                     <p class="card-text">Crouch</p>
+                    <img src="img/keyboard-R.svg" style="width: 40px;">
+                    <p class="card-text">Replay</p>
+                    <img src="img/keyboard-M.svg" style="width: 40px;">
+                    <p class="card-text">Menu</p>
                 </div>
             </section>
             
@@ -206,6 +215,7 @@
             // Parsing JSON string into object
             var actual_JSON = JSON.parse(response);
             if(lenguage==="es"){
+                googlePlayBadge.src = (googlePlayBadge.src).replace("en_badge","es-419_badge");
                 document.children[0].lang = "es";
                 let menu = document.getElementById("menu").children;
                 //console.log(menu);
@@ -217,15 +227,18 @@
                 how.children[0].innerHTML = actual_JSON[0].titles[2];
                 how.children[2].innerHTML = actual_JSON[0].desc[1];
                 how.children[4].innerHTML = actual_JSON[0].desc[2];
+                how.children[6].innerHTML = actual_JSON[0].desc[3];
+                how.children[8].innerHTML = actual_JSON[0].desc[4];
 
                 let story =  (document.getElementById("story").children[0]);
                 story.children[0].innerHTML = actual_JSON[0].titles[1];
-                story.children[1].innerHTML = actual_JSON[0].desc[3];
+                story.children[1].innerHTML = actual_JSON[0].desc[5];
                 story.children[2].innerHTML = actual_JSON[0].titles[3];
-                story.children[3].innerHTML = actual_JSON[0].desc[4];
+                story.children[3].innerHTML = actual_JSON[0].desc[6];
             }
             else if(lenguage==="en"){
                 document.children[0].lang = "en";
+                googlePlayBadge.src = (googlePlayBadge.src).replace("es-419_badge","en_badge");
                 let menu = document.getElementById("menu").children;
                 //console.log(menu);
                 for(var i=0;i<menu.length;i++){
@@ -236,12 +249,14 @@
                 how.children[0].innerHTML = actual_JSON[1].titles[2];
                 how.children[2].innerHTML = actual_JSON[1].desc[1];
                 how.children[4].innerHTML = actual_JSON[1].desc[2];
+                how.children[6].innerHTML = actual_JSON[0].desc[3];
+                how.children[8].innerHTML = actual_JSON[0].desc[4];
 
                 let story =  (document.getElementById("story").children[0]);
                 story.children[0].innerHTML = actual_JSON[1].titles[1];
-                story.children[1].innerHTML = actual_JSON[1].desc[3];
+                story.children[1].innerHTML = actual_JSON[1].desc[5];
                 story.children[2].innerHTML = actual_JSON[1].titles[3];
-                story.children[3].innerHTML = actual_JSON[1].desc[4];
+                story.children[3].innerHTML = actual_JSON[1].desc[6];
             }
         });
         console.log(document.children[0].lang);
